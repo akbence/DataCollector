@@ -22,7 +22,7 @@ public class Main {
 		
 		  
 		 
-		Thread.sleep(1000);
+		
 		  
 	
 		  	String URL = "tcp://test.mosquitto.org:1883";
@@ -33,7 +33,7 @@ public class Main {
 	        //System.out.println(dp.getServices().getService(HttpServer.class).getConsoleUrl());
 	        Topology topology = dp.newTopology();
 	        MqttStreams mystream = new MqttStreams(topology, URL, clientId);
-	        TStream<Double> tempReadings = topology.poll( sensor, 500, TimeUnit.MILLISECONDS);
+	        TStream<Double> tempReadings = topology.poll( sensor, 1000, TimeUnit.MILLISECONDS);
 	        
 	        TStream<String> cpupercent = tempReadings.map(new Function<Double, String>() {
 	            
