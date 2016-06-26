@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk8"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.api.execution.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.api.function.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/bence/quarks/incubator-quarks-master/target/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.api.graph.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/bence/quarks/incubator-quarks-master/target/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.api.oplet.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.api.topology.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/bence/quarks/incubator-quarks-master/target/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.api.window.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.providers.development.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.providers.direct.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.providers.iot.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.runtime.appservice.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.runtime.etiao.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.runtime.jmxcontrol.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.runtime.jobregistry.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.runtime.jsoncontrol.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.spi.graph.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/lib/quarks.spi.topology.jar"/>
+	<classpathentry kind="lib" path="/home/bence/quarks/incubator-quarks-master/target/java8/connectors/mqtt/lib/quarks.connectors.mqtt.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
