@@ -28,28 +28,49 @@ public class Main {
 		  	String URL = "tcp://test.mosquitto.org:1883";
 	        String clientId = "quarks_client";
 	        CPUSupply<Double> sensor = new CPUSupply<Double>();
+	        MemSupply<Long> sensor_mem = new MemSupply<Long>();
 	        
 	        DirectProvider dp = new DirectProvider();
 	        //System.out.println(dp.getServices().getService(HttpServer.class).getConsoleUrl());
 	        Topology topology = dp.newTopology();
 	        MqttStreams mystream = new MqttStreams(topology, URL, clientId);
-	        TStream<Double> tempReadings = topology.poll( sensor, 1000, TimeUnit.MILLISECONDS);
 	        
+	        /*
+	         * CPU Usage stream creation and mapping to String.
+	         * Mapping is necessary for publishing over MQTT. 
+	         */
+	        TStream<Double> tempReadings = topology.poll( sensor, 1000, TimeUnit.MILLISECONDS);
 	        TStream<String> cpupercent = tempReadings.map(new Function<Double, String>() {
-	            
-	            /**
-				 * 
-				 */
 				private static final long serialVersionUID = 1L;
 
 				@Override
 	            public String apply(Double arg0) {
 	                return arg0.toString();
-	                
 	            }
 	        });
 	        
+	        /*
+	         * Mem Usage stream creation and mapping to String.
+	         * Mapping is necessary for publishing over MQTT. 
+	         */
+	        TStream<Long> tempReadings_mem = topology.poll( sensor_mem, 1000, TimeUnit.MILLISECONDS);
+	        TStream<String> memdata= tempReadings_mem.map(new Function<Long, String>() {
+				
+
+				@Override
+	            public String apply(Long arg0) {
+	                return arg0.toString();
+	            }
+	        });
+	        
+	        
+	        
+	        /*
+	         * MQTT publishing.
+	         */
 	        mystream.publish(cpupercent, "CPUUsage",0, true);
+	        mystream.publish(memdata, "MemoryUsage", 0, true);
+	        
 	        dp.submit(topology);
 
 	
